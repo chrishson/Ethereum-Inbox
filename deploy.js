@@ -14,10 +14,11 @@ const provider = new HDWalletProvider(
 const web3 = new Web3(provider);
 
 
-//!!IMPORTANT!! bytecode must have 0x infront of it. This assumes that the rest
+// !!IMPORTANT!! bytecode must have 0x infront of it. This assumes that the rest
 // of the bytecode is hexadecimal and will be left alone,
 // otherwise the string gets converted to hexadecimal and will be double the size,
 // and completely wrong.
+// https://ethereum.stackexchange.com/questions/47482/error-the-contract-code-couldnt-be-stored-please-check-your-gas-limit/
 const deploy = async () => {
   const INITIAL_MESSAGE = ['XRP OMG ELEC']
   const accounts = await web3.eth.getAccounts();
